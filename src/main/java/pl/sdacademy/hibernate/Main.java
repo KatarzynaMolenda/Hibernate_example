@@ -14,7 +14,36 @@ public class Main {
                 .buildSessionFactory();
 
         int id = createExample();
+        Song song = readExample(1);
+        updateExample(song);
+        song = readExample(1);
+        deleteExample(song);
         sessionFactory.close();
+    }
+
+    private static void deleteExample(Song song) {
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.delete(song);
+        transaction.commit();
+        session.close();
+    }
+
+    private static void updateExample(Song song) {
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        song.setArtist("Marta");
+        session.update(song);
+        transaction.commit();
+        session.close();
+    }
+
+    private static Song readExample(int id) {
+        Session session = sessionFactory.openSession();
+        Song song = session.get(Song.class, id);
+        System.out.println(song);
+        session.close();
+        return song;
     }
 
     private static int createExample() {
