@@ -1,4 +1,4 @@
-package pl.sdacademy.hibernate;
+package pl.sdacademy.hibernate.example1;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

@@ -1,4 +1,4 @@
-package pl.sdacademy.hibernate;
+package pl.sdacademy.hibernate.example1;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
