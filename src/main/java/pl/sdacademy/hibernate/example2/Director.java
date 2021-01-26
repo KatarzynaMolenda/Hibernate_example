@@ -11,8 +11,6 @@ public class Director {
     private Integer id;
     private String firstName;
     private String lastName;
-    @OneToMany
-    private Set<Movie> movies = new HashSet<>();
 
     public Director(String firstName, String lastName) {
         this.firstName = firstName;
@@ -34,9 +32,6 @@ public class Director {
         return lastName;
     }
 
-    public Set<Movie> getMovies() {
-        return movies;
-    }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -46,9 +41,6 @@ public class Director {
         this.lastName = lastName;
     }
 
-    public void setMovies(Set<Movie> movies) {
-        this.movies = movies;
-    }
 
     @Override
     public String toString() {
@@ -56,7 +48,7 @@ public class Director {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", movies=" + movies +
+
                 '}';
     }
 }

@@ -10,15 +10,12 @@ public class Movie {
     private Integer id;
     private String title;
     private int length;
-    @OneToMany
-    private Set<Actor> actors;
     @ManyToOne
     private Director director;
 
-    public Movie(String title, int length, Set<Actor> actors, Director director) {
+    public Movie(String title, int length, Director director) {
         this.title = title;
         this.length = length;
-        this.actors = actors;
         this.director = director;
     }
 
@@ -31,10 +28,6 @@ public class Movie {
 
     public String getTitle() {
         return title;
-    }
-
-    public Set<Actor> getActors() {
-        return actors;
     }
 
     public int getLength() {
@@ -50,9 +43,6 @@ public class Movie {
         this.title = title;
     }
 
-    public void setActors(Set<Actor> actors) {
-        this.actors = actors;
-    }
 
     public void setDirector(Director director) {
         this.director = director;
@@ -68,7 +58,6 @@ public class Movie {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", length=" + length +
-                ", actors=" + actors +
                 ", director=" + director +
                 '}';
     }
